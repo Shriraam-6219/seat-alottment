@@ -1,11 +1,11 @@
-const express = require("express");
-const app = express();
+const express = require('express')
+const app = express()
 const mysql = require('mysql');
 
 const db = mysql.createConnection({
   host     : "localhost",
-  user     : "root",
-  password : "A5yVf*YxpDD#G!r!u#&GMoo3QEYjyw&tcC64Z!eUqcy#W%q$gy3Khiw76P@bEHwwLzMRH",
+  user     : "website",
+  password : "password",
   database : "allotment",
   port: "3306"
 });
