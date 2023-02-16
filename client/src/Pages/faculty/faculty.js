@@ -1,7 +1,7 @@
 import React from "react";
 import AB from "../..//assets/ao-block.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../student/faculty.css';
+import '../faculty/faculty.css';
 
 function Faculty() {
   return <div>

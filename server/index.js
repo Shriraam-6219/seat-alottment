@@ -1,29 +1,35 @@
 const express = require('express')
 const app = express()
 const mysql = require('mysql');
+const cors = require("cors");
+app.use(cors());
 
 const db = mysql.createConnection({
   host     : "localhost",
-  user     : "website",
-  password : "password",
+  user     : "root",
+  password : "your_current_password",
   database : "allotment",
   port: "3306"
 });
 
-app.get("/faculty",(req,res)=>{
+//student seat findingx
+
+app.post("/student",(req,res)=>{
+
+  const rgnum= req.body.rgnum
+
   db.query(
-    "INSERT INTO seats (department,roomno,seatno) VALUES ('CSE','2','5');",
+    "SELECT * FROM seats WHERE rgnum=(?);",
+    [rgnum],
     (err,results)=>{
       console.log(err);
     res.send(results);
   });
 });
-/*const cors = require("cors");
 
-app.use(cors());
 app.use(express.json());
 
-const userRoute = require("./routes/User");
+/*const userRoute = require("./routes/User");
 app.use("/user", userRoute);
 const uploadRoute = require("./routes/Upload");
 app.use("/upload", uploadRoute);*/
